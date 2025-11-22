@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive rating component</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+
+  <main>
+    <div id="rating-state">
+      <!-- Rating state start -->
+      <div class="star-icon">
+        <img src="./images/icon-star.svg" alt="Star Icon">
+      </div>
+
+      <h1 class="title overpass-700">How did we do?</h1>
+
+      <span class="description overpass-400">
+        Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!
+      </span>
+
+      <form id="form" action="#">
+        <div id="rating" class="overpass-400" aria-label="Please choose your rating (1-5)." aria-required="true">
+          <div><label><input type="radio" name="item" value="1">1</label></div>
+          <div><label><input type="radio" name="item" value="2">2</label></div>
+          <div><label><input type="radio" name="item" value="3">3</label></div>
+          <div><label><input type="radio" name="item" value="4">4</label></div>
+          <div><label><input type="radio" name="item" value="5">5</label></div>
+        </div>
+
+        <input type="submit" value="Submit" id="submit" class="overpass-700">
+      </form>
+
+      <!-- Rating state end -->
+    </div>
+
+    <div id="thank-you-state">
+      <!-- Thank you state start -->
+      
+      <div class="illustration">
+        <img src="./images/illustration-thank-you.svg" alt="An illustration">
+      </div>
+
+      <div class="text">You selected <span id="result"></span> out of 5</div>
+
+      <h2 class="title overpass-700">Thank you!</h2>
+
+      <span class="description overpass-400">
+        We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
+      </span>
+
+      <!-- Thank you state end -->
+    </div>
+
+  </main>
+  
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/LYGreen">LYGreen</a>.
+    </div>
+  </footer>
+</body>
+</html>

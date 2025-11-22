@@ -1,0 +1,192 @@
+:root {
+    --orange-500: hsl(25, 97%, 53%);
+    --white: hsl(0, 100%, 100%);
+    --grey-500: hsl(217, 12%, 63%);
+    --grey-900: hsl(213, 19%, 18%);
+    --grey-950: hsl(216, 12%, 8%);
+}
+
+.overpass-400 {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.overpass-700 {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    background-color: var(--grey-950);
+}
+
+main {
+    position: relative;
+    flex: 1;
+}
+
+.title {
+    color: var(--white);
+}
+
+.description {
+    color: var(--grey-500);
+    width: 36ch;
+}
+
+#rating-state {
+    display: flex;
+    border-radius: 1rem;
+    flex-direction: column;
+    padding: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(to top, var(--grey-950), var(--grey-900));
+
+    .star-icon {
+        background-color: rgba(255, 255, 255, 0.05);
+        width: 42px;
+        height: 42px;
+        border-radius: 100%;
+        position: relative;
+
+        & > img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        #rating {
+            display: flex;
+            color: var(--grey-500);
+            margin: 1.5rem 0;
+            gap: 1.5rem;
+            border-width: 0;
+
+            & > div {
+                display: flex;
+                flex: 1;
+                
+                label {
+                    flex: 1;
+                    aspect-ratio: 1 / 1;
+                    position: relative;
+                    background-color: var(--grey-900);
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:has(input[name='item']:checked) {
+                        background-color: var(--white);
+                        color: var(--grey-950);
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: var(--orange-500);
+                        color: var(--grey-950);
+                    }
+
+                    & > input {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        #submit {
+            outline-width: 0;
+            border-width: 0;
+            border-radius: 2rem;
+            height: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            background-color: var(--orange-500);
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--white);
+            }
+        }
+    }
+}
+
+#thank-you-state {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to top, var(--grey-950), var(--grey-900));
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    border-radius: 1rem;
+
+    .text {
+        margin: 1.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--orange-500);
+    }
+    
+    .description {
+        word-wrap: break-word;
+        text-align: center;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--grey-500);
+}
+
+.attribution a {
+    color: hsl(228, 65%, 68%);
+}
+
+@media (max-width: 768px) {
+    .description {
+        width: unset;
+    }
+
+    main {
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    #rating-state {
+        position: static;
+        transform: unset;
+
+        form #rating {
+            gap: 1rem;
+        }
+    }
+
+    #thank-you-state {
+        position: static;
+        transform: unset;
+    }
+}
