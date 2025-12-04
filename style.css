@@ -1,3 +1,4 @@
+/* Colors */
 :root {
     --orange-500: hsl(25, 97%, 53%);
     --white: hsl(0, 100%, 100%);
@@ -6,6 +7,7 @@
     --grey-950: hsl(216, 12%, 8%);
 }
 
+/* Fonts */
 .overpass-400 {
   font-family: "Overpass", sans-serif;
   font-optical-sizing: auto;
@@ -20,6 +22,7 @@
   font-style: normal;
 }
 
+/* Flex document */
 html, body {
     display: flex;
     flex-direction: column;
@@ -42,6 +45,7 @@ main {
     width: 36ch;
 }
 
+/* Rating state */
 #rating-state {
     display: flex;
     border-radius: 1rem;
@@ -58,6 +62,7 @@ main {
         background-color: rgba(255, 255, 255, 0.05);
         width: 42px;
         height: 42px;
+        margin: 0;
         border-radius: 100%;
         position: relative;
 
@@ -67,6 +72,11 @@ main {
             top: 50%;
             transform: translate(-50%, -50%);
         }
+
+        & > figcaption {
+            display: none;
+        }
+
     }
 
     form {
@@ -80,34 +90,35 @@ main {
             gap: 1.5rem;
             border-width: 0;
 
-            & > div {
-                display: flex;
+            /* Rating selections */
+            input[type='radio'] {
                 flex: 1;
-                
-                label {
-                    flex: 1;
-                    aspect-ratio: 1 / 1;
-                    position: relative;
-                    background-color: var(--grey-900);
-                    border-radius: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                color: var(--white);
+                appearance: none;
+                width: 32px;
+                aspect-ratio: 1 / 1;
+                position: relative;
+                background: var(--grey-900);
+                border-radius: 100%;
+                transition: background 0.3s ease;
 
-                    &:has(input[name='item']:checked) {
-                        background-color: var(--white);
-                        color: var(--grey-950);
-                    }
+                &:checked {
+                    background-color: var(--white);
+                    color: var(--grey-950);
+                }
 
-                    &:hover {
-                        cursor: pointer;
-                        background-color: var(--orange-500);
-                        color: var(--grey-950);
-                    }
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--orange-500);
+                    color: var(--grey-950);
+                }
 
-                    & > input {
-                        display: none;
-                    }
+                &::after {
+                    content: attr(value);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
         }
@@ -121,9 +132,11 @@ main {
             letter-spacing: 0.1rem;
             background-color: var(--orange-500);
             cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s;
 
             &:hover {
                 background-color: var(--white);
+                transform: scaleX(1.05);
             }
         }
     }
@@ -153,6 +166,15 @@ main {
         word-wrap: break-word;
         text-align: center;
     }
+
+    /* illustration */
+    figure {
+        margin: 0;
+
+        & > figcaption {
+            display: none;
+        }
+    }
 }
 
 .attribution {
@@ -177,6 +199,7 @@ main {
     }
 
     #rating-state {
+        padding: 1rem;
         position: static;
         transform: unset;
 
@@ -186,6 +209,7 @@ main {
     }
 
     #thank-you-state {
+        padding: 1rem;
         position: static;
         transform: unset;
     }

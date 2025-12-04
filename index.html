@@ -15,11 +15,12 @@
 <body>
 
   <main>
-    <div id="rating-state">
+    <section id="rating-state">
       <!-- Rating state start -->
-      <div class="star-icon">
-        <img src="./images/icon-star.svg" alt="Star Icon">
-      </div>
+      <figure class="star-icon">
+        <img src="./assets/images/icon-star.svg" alt="Star Icon">
+        <figcaption>star</figcaption>
+      </figure>
 
       <h1 class="title overpass-700">How did we do?</h1>
 
@@ -30,36 +31,37 @@
 
       <form id="form" action="#">
         <div id="rating" class="overpass-400" aria-label="Please choose your rating (1-5).">
-          <div><label><input type="radio" name="item" value="1">1</label></div>
-          <div><label><input type="radio" name="item" value="2">2</label></div>
-          <div><label><input type="radio" name="item" value="3">3</label></div>
-          <div><label><input type="radio" name="item" value="4">4</label></div>
-          <div><label><input type="radio" name="item" value="5">5</label></div>
+          <input type="radio" name="item" value="1" aria-label="Rating 1">
+          <input type="radio" name="item" value="2" aria-label="Rating 2">
+          <input type="radio" name="item" value="3" aria-label="Rating 3">
+          <input type="radio" name="item" value="4" aria-label="Rating 4">
+          <input type="radio" name="item" value="5" aria-label="Rating 5">
         </div>
 
         <input type="submit" value="Submit" id="submit" class="overpass-700">
       </form>
 
       <!-- Rating state end -->
-    </div>
+    </section>
 
-    <div id="thank-you-state">
+    <section id="thank-you-state">
       <!-- Thank you state start -->
       
-      <div class="illustration">
-        <img src="./images/illustration-thank-you.svg" alt="An illustration">
-      </div>
+      <figure class="illustration">
+        <img src="./assets/images/illustration-thank-you.svg" alt="An illustration">
+        <figcaption>Thank you</figcaption>
+      </figure>
 
       <div class="text">You selected <span id="result"></span> out of 5</div>
 
       <h2 class="title overpass-700">Thank you!</h2>
 
-      <span class="description overpass-400">
+      <p class="description overpass-400">
         We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
-      </span>
+      </p>
 
       <!-- Thank you state end -->
-    </div>
+    </section>
 
   </main>
   
